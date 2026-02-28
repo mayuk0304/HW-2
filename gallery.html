@@ -1,45 +1,98 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gallery</title>
+  <title>Gallery</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Header goes here -->
-<header class="site-header">
-  <div class="container header-inner">
-    
-    <!-- Logo / Site Name -->
-    <a href="index.html" class="brand">
-      My Portfolio
-    </a>
+  <!-- Header (shared) -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand">My Portfolio</a>
 
-    <!-- Navigation -->
-    <nav class="nav" aria-label="Main Navigation">
-      <ul class="nav-list">
-        <li><a href="index.html" class="nav-link">Home</a></li>
-        <li><a href="about.html" class="nav-link">About</a></li>
-        <li><a href="gallery.html" class="nav-link">Gallery</a></li>
-        <li><a href="contact.html" class="nav-link">Contact</a></li>
-      </ul>
-    </nav>
-
-  </div>
-</header>
+      <nav class="nav" aria-label="Main Navigation">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
   <main>
-    <!-- Page content will go here later -->
+
+    <!-- Page Title Section -->
+    <section class="section page-title">
+      <div class="container">
+        <header class="section-header">
+          <h1>Gallery</h1>
+          <p class="lead">
+            A collection of images displayed in a responsive grid layout.
+          </p>
+        </header>
+      </div>
+    </section>
+
+    <!-- Responsive Image Grid (at least 9 images) -->
+    <section class="section gallery">
+      <div class="container">
+
+        <div class="gallery-grid">
+          <figure class="gallery-item">
+            <img src="images/gallery-1.jpg" alt="Gallery image 1">
+          </figure>
+
+          <figure class="gallery-item">
+            <img src="images/gallery-2.jpg" alt="Gallery image 2">
+          </figure>
+
+          <figure class="gallery-item">
+            <img src="images/gallery-3.jpg" alt="Gallery image 3">
+          </figure>
+
+          <figure class="gallery-item">
+            <img src="images/gallery-4.jpg" alt="Gallery image 4">
+          </figure>
+
+          <figure class="gallery-item">
+            <img src="images/gallery-5.jpg" alt="Gallery image 5">
+          </figure>
+
+          <figure class="gallery-item">
+            <img src="images/gallery-6.jpg" alt="Gallery image 6">
+          </figure>
+
+          <figure class="gallery-item">
+            <img src="images/gallery-7.jpg" alt="Gallery image 7">
+          </figure>
+
+          <figure class="gallery-item">
+            <img src="images/gallery-8.jpg" alt="Gallery image 8">
+          </figure>
+
+          <figure class="gallery-item">
+            <img src="images/gallery-9.jpg" alt="Gallery image 9">
+          </figure>
+        </div>
+
+      </div>
+    </section>
+
   </main>
 
-  <!-- Footer goes here -->
- <footer class="site-footer">
-  <div class="container footer-inner">
-    <p>&copy; 2026 My Portfolio. All rights reserved.</p>
-  </div>
-</footer>
+  <!-- Footer (shared) -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; 2026 My Portfolio. All rights reserved.</p>
+    </div>
+  </footer>
 
 </body>
 </html>
+```

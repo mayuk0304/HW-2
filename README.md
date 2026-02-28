@@ -1,0 +1,1 @@
+My name is Mayu Kanai. I've built a multi-page website HTML, CSS, and ChatGPT using the target design along with the page list. Chat GPT facilitated the use of prompts to create a proposal and layout of the entirety of the website. I manually changed some of the titles to properly adhere to the corresponding files. 

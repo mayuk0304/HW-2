@@ -1,45 +1,209 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Home</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- Header goes here -->
-<header class="site-header">
-  <div class="container header-inner">
-    
-    <!-- Logo / Site Name -->
-    <a href="index.html" class="brand">
-      My Portfolio
-    </a>
+  <!-- Header (shared) -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand">My Portfolio</a>
 
-    <!-- Navigation -->
-    <nav class="nav" aria-label="Main Navigation">
-      <ul class="nav-list">
-        <li><a href="index.html" class="nav-link">Home</a></li>
-        <li><a href="about.html" class="nav-link">About</a></li>
-        <li><a href="gallery.html" class="nav-link">Gallery</a></li>
-        <li><a href="contact.html" class="nav-link">Contact</a></li>
-      </ul>
-    </nav>
-
-  </div>
-</header>
+      <nav class="nav" aria-label="Main Navigation">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
   <main>
-    <!-- Page content will go here later -->
+
+    <!-- Hero Slider (placeholder, 3 slides) -->
+    <section class="section hero">
+      <div class="container">
+        <header class="section-header">
+          <h1 class="hero-title">Welcome to My Portfolio</h1>
+          <p class="hero-subtitle">A clean, responsive multi-page website built with HTML and CSS.</p>
+        </header>
+
+        <div class="hero-slider" aria-label="Hero Slider">
+          <article class="hero-slide">
+            <img src="images/hero-1.jpg" alt="Hero slide 1" />
+            <div class="hero-slide-content">
+              <h2>Slide One Title</h2>
+              <p>Short description for slide one.</p>
+              <a class="btn btn-primary" href="gallery.html">View Gallery</a>
+            </div>
+          </article>
+
+          <article class="hero-slide">
+            <img src="images/hero-2.jpg" alt="Hero slide 2" />
+            <div class="hero-slide-content">
+              <h2>Slide Two Title</h2>
+              <p>Short description for slide two.</p>
+              <a class="btn btn-primary" href="about.html">Learn More</a>
+            </div>
+          </article>
+
+          <article class="hero-slide">
+            <img src="images/hero-3.jpg" alt="Hero slide 3" />
+            <div class="hero-slide-content">
+              <h2>Slide Three Title</h2>
+              <p>Short description for slide three.</p>
+              <a class="btn btn-primary" href="contact.html">Get in Touch</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Preview (image + text) -->
+    <section class="section about-preview">
+      <div class="container">
+        <header class="section-header">
+          <h2>About</h2>
+          <p>A quick introduction and what this site is about.</p>
+        </header>
+
+        <div class="about-preview-inner">
+          <div class="about-preview-media">
+            <img src="images/about-preview.jpg" alt="About preview image" />
+          </div>
+          <div class="about-preview-content">
+            <h3>Hello, I’m the creator.</h3>
+            <p>
+              This project recreates a target design using only HTML and CSS.
+              It includes consistent navigation, responsive layouts, and reusable sections.
+            </p>
+            <p>
+              Visit the About page to learn more about the background and approach.
+            </p>
+            <a class="btn btn-secondary" href="about.html">Read More</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services / Features (cards) -->
+    <section class="section features">
+      <div class="container">
+        <header class="section-header">
+          <h2>Features</h2>
+          <p>Key parts of the website structure.</p>
+        </header>
+
+        <div class="card-grid">
+          <article class="card">
+            <h3>Semantic HTML</h3>
+            <p>Sections, headings, and structure that are easy to read and maintain.</p>
+          </article>
+
+          <article class="card">
+            <h3>Responsive Layout</h3>
+            <p>Mobile-first design that adapts smoothly to larger screens.</p>
+          </article>
+
+          <article class="card">
+            <h3>Reusable Components</h3>
+            <p>Shared header and footer across all pages using consistent classes.</p>
+          </article>
+
+          <article class="card">
+            <h3>Clean Design</h3>
+            <p>Simple spacing, typography, and a modern UI style aligned to the target.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery Preview Grid (at least 6 images) -->
+    <section class="section gallery-preview">
+      <div class="container">
+        <header class="section-header">
+          <h2>Gallery Preview</h2>
+          <p>A selection of images from the full gallery.</p>
+        </header>
+
+        <div class="image-grid">
+          <img src="images/gallery-1.jpg" alt="Gallery preview image 1" />
+          <img src="images/gallery-2.jpg" alt="Gallery preview image 2" />
+          <img src="images/gallery-3.jpg" alt="Gallery preview image 3" />
+          <img src="images/gallery-4.jpg" alt="Gallery preview image 4" />
+          <img src="images/gallery-5.jpg" alt="Gallery preview image 5" />
+          <img src="images/gallery-6.jpg" alt="Gallery preview image 6" />
+        </div>
+
+        <div class="section-actions">
+          <a class="btn btn-primary" href="gallery.html">View Full Gallery</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="section cta">
+      <div class="container cta-inner">
+        <div class="cta-content">
+          <h2>Ready to connect?</h2>
+          <p>Send a message or explore the rest of the site using the navigation above.</p>
+        </div>
+        <div class="cta-actions">
+          <a class="btn btn-primary" href="contact.html">Contact Me</a>
+          <a class="btn btn-secondary" href="about.html">About Me</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Preview (full form) -->
+    <section class="section contact-preview">
+      <div class="container">
+        <header class="section-header">
+          <h2>Contact</h2>
+          <p>Use the form below to send a message.</p>
+        </header>
+
+        <form class="contact-form" action="#" method="post">
+          <div class="form-row">
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" autocomplete="name" />
+          </div>
+
+          <div class="form-row">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email" />
+          </div>
+
+          <div class="form-row">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5"></textarea>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Send Message</button>
+          </div>
+        </form>
+
+        <div class="section-actions">
+          <p>Prefer a dedicated page? <a href="contact.html" class="link">Open the Contact page</a>.</p>
+        </div>
+      </div>
+    </section>
+
   </main>
 
-  <!-- Footer goes here -->
- <footer class="site-footer">
-  <div class="container footer-inner">
-    <p>&copy; 2026 My Portfolio. All rights reserved.</p>
-  </div>
-</footer>
+  <!-- Footer (shared) -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; 2026 My Portfolio. All rights reserved.</p>
+    </div>
+  </footer>
 
 </body>
 </html>

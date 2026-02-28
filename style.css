@@ -1,5 +1,5 @@
 /* ==============================
-   GLOBAL RESET
+   LAYER 1: GLOBAL RESET
 ================================ */
 
 *,
@@ -51,6 +51,8 @@ img {
   --space-6: 32px;
   --space-7: 48px;
   --space-8: 64px;
+
+  --radius: 10px;
 }
 
 /* ==============================
@@ -58,7 +60,7 @@ img {
 ================================ */
 
 body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 
+  font-family: system-ui, -apple-system, BlinkMacSystemFont,
                "Segoe UI", Roboto, Arial, sans-serif;
   font-size: 16px;
   line-height: 1.6;
@@ -131,7 +133,7 @@ a:hover {
   border-radius: 6px;
   border: 1px solid transparent;
   cursor: pointer;
-  transition: background-color 0.2s ease, color 0.2s ease;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
 }
 
 .btn-primary {
@@ -202,8 +204,12 @@ a:hover {
   color: var(--muted);
 }
 
+.site-footer p {
+  margin-bottom: 0;
+}
+
 /* ==============================
-   RESPONSIVE BASICS
+   RESPONSIVE BASICS (NAV)
 ================================ */
 
 @media (max-width: 768px) {
@@ -217,4 +223,404 @@ a:hover {
     flex-direction: column;
     gap: var(--space-2);
   }
+}
+
+/* ==============================
+   LAYER 2: HOME PAGE SECTION STYLES
+   - hero slider (CSS only)
+   - about preview 2-col
+   - cards
+   - gallery preview grid
+   - call to action
+================================ */
+
+/* Shared section header helpers */
+.section-header .lead,
+.lead {
+  font-size: 1.05rem;
+}
+
+.section-header p {
+  margin-bottom: 0;
+}
+
+/* ---------- HERO + CSS-ONLY "SLIDER" ---------- */
+.hero {
+  padding-top: var(--space-6);
+}
+
+.hero-slider {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  position: relative;
+  min-height: 520px; /* keeps layout stable while slides overlap */
+}
+
+/* Each slide overlaps; CSS cycles opacity */
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  background: var(--surface);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.hero-slide img {
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+}
+
+.hero-slide-content {
+  padding: var(--space-5);
+}
+
+.hero-slide-content h2 {
+  margin-bottom: var(--space-2);
+}
+
+.hero-slide-content p {
+  margin-bottom: var(--space-4);
+}
+
+/* Make all slides run the same animation with different delays */
+.hero-slide:nth-child(1) {
+  animation: heroSlide 12s infinite;
+}
+
+.hero-slide:nth-child(2) {
+  animation: heroSlide 12s infinite;
+  animation-delay: 4s;
+}
+
+.hero-slide:nth-child(3) {
+  animation: heroSlide 12s infinite;
+  animation-delay: 8s;
+}
+
+@keyframes heroSlide {
+  0% { opacity: 0; pointer-events: none; }
+  8% { opacity: 1; pointer-events: auto; }
+  33% { opacity: 1; pointer-events: auto; }
+  41% { opacity: 0; pointer-events: none; }
+  100% { opacity: 0; pointer-events: none; }
+}
+
+/* ---------- ABOUT PREVIEW (HOME) ---------- */
+.about-preview-inner {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: var(--space-6);
+  align-items: center;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: var(--space-6);
+}
+
+.about-preview-media img {
+  border-radius: calc(var(--radius) - 2px);
+  border: 1px solid var(--border);
+}
+
+.about-preview-content p {
+  color: var(--muted);
+}
+
+/* ---------- FEATURES / SERVICES CARDS (HOME) ---------- */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-4);
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: var(--space-5);
+}
+
+.card p {
+  margin-bottom: 0;
+}
+
+/* ---------- GALLERY PREVIEW GRID (HOME) ---------- */
+.gallery-preview .image-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-4);
+}
+
+.image-grid img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--surface);
+}
+
+.section-actions {
+  margin-top: var(--space-5);
+}
+
+/* ---------- CALL TO ACTION (HOME) ---------- */
+.cta {
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.cta-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-6);
+  padding: var(--space-6);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: #fff;
+}
+
+.cta-content p {
+  margin-bottom: 0;
+}
+
+/* ---------- CONTACT PREVIEW FORM (HOME) ---------- */
+.contact-form {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: var(--space-6);
+  max-width: 720px;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin-bottom: var(--space-4);
+}
+
+.form-row label {
+  font-weight: 500;
+  color: var(--text);
+}
+
+.form-row input,
+.form-row textarea {
+  width: 100%;
+  padding: var(--space-3);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font: inherit;
+  background: #fff;
+  color: var(--text);
+}
+
+.form-row input:focus,
+.form-row textarea:focus {
+  outline: 2px solid rgba(9, 105, 218, 0.25);
+  border-color: var(--accent);
+}
+
+.form-actions {
+  margin-top: var(--space-4);
+}
+
+/* ==============================
+   RESPONSIVE (LAYER 2)
+================================ */
+
+@media (max-width: 1024px) {
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .about-preview-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-slider {
+    min-height: 560px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-slide img {
+    height: 260px;
+  }
+
+  .hero-slider {
+    min-height: 480px;
+  }
+
+  .gallery-preview .image-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cta-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery-preview .image-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-preview-inner {
+    padding: var(--space-5);
+  }
+}
+
+/* ==============================
+   LAYER 3: PAGE-SPECIFIC STYLES
+   - about alternating layout
+   - gallery grid spacing + hover
+   - contact form layout
+================================ */
+
+/* ---------- Page title section ---------- */
+.page-title .lead {
+  max-width: 70ch;
+}
+
+/* ---------- ABOUT PAGE: alternating two-column layout ---------- */
+/* Matches about.html: .two-column + .column + .media + .content */
+.two-column {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: var(--space-6);
+  align-items: center;
+
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: var(--space-6);
+}
+
+.two-column .media img {
+  border-radius: calc(var(--radius) - 2px);
+  border: 1px solid var(--border);
+  width: 100%;
+  height: auto;
+}
+
+.two-column .content p:last-child {
+  margin-bottom: 0;
+}
+
+/* Optional: make alt about section slightly different */
+.about-section.alt .two-column {
+  background: #fff;
+}
+
+/* About page responsiveness */
+@media (max-width: 1024px) {
+  .two-column {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- GALLERY PAGE: grid + spacing + hover effect ---------- */
+/* Matches gallery.html: .gallery-grid + .gallery-item */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-4);
+}
+
+.gallery-item {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+/* Hover effect (subtle lift) */
+.gallery-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(31, 35, 40, 0.08);
+}
+
+/* Gallery responsiveness */
+@media (max-width: 1024px) {
+  .gallery-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .gallery-item img {
+    height: 180px;
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-item img {
+    height: 200px;
+  }
+}
+
+/* ---------- CONTACT PAGE: form layout ---------- */
+/* contact.html uses .contact-form, .form-group, .form-actions */
+.contact-section .contact-form {
+  max-width: 720px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin-bottom: var(--space-4);
+}
+
+.form-group label {
+  font-weight: 500;
+  color: var(--text);
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: var(--space-3);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font: inherit;
+  background: #fff;
+  color: var(--text);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: 2px solid rgba(9, 105, 218, 0.25);
+  border-color: var(--accent);
+}
+
+.contact-section .form-actions {
+  margin-top: var(--space-4);
 }
